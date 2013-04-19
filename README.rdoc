@@ -1,0 +1,16 @@
+= attr_write_once
+
+AttrWriteOnce gives you a method to create one-time writer methods.
+
+== Example
+
+  require 'attr_write_once'
+
+  class Example
+    extend AttrWriteOnce
+    attr_write_once :field
+  end
+
+  example = Example.new
+  example.field = 1
+  example.field = 2 # raises an exception
