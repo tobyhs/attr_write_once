@@ -23,7 +23,9 @@ describe AttrWriteOnce do
 
     it 'raises an exception when trying to write to an attribute a 2nd time' do
       subject.field = 1
-      expect { subject.field = 2 }.to raise_error
+      expect {
+        subject.field = 2
+      }.to raise_error(AttrWriteOnce::WriteLimitExceeded)
     end
   end
 end

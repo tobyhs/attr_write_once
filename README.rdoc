@@ -13,4 +13,4 @@ AttrWriteOnce gives you a method to create one-time writer methods.
 
   example = Example.new
   example.field = 1
-  example.field = 2 # raises an exception
+  example.field = 2 # raises AttrWriteOnce::WriteLimitExceeded
