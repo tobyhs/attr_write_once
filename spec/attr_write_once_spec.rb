@@ -12,13 +12,13 @@ describe AttrWriteOnce do
     subject { klass.new }
 
     it 'is private' do
-      klass.should_not respond_to(:attr_write_once)
+      expect(klass).to_not respond_to(:attr_write_once)
     end
 
     it 'allows writing to an attribute once' do
-      subject.field.should be_nil
+      expect(subject.field).to be_nil
       subject.field = 7
-      subject.field.should == 7
+      expect(subject.field).to eq(7)
     end
 
     it 'raises an exception when trying to write to an attribute a 2nd time' do
